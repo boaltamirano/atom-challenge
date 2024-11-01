@@ -13,7 +13,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CoreModule } from '../core/core.module';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
-import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 import { BtnActionComponent } from './btn-action/btn-action.component';
 import { ToolbarFilterComponent } from './toolbar-filter/toolbar-filter.component';
 import { CardListTaskComponent } from './card-list-task/card-list-task.component';
@@ -23,7 +22,6 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
     declarations: [
-        LoadingScreenComponent,
         NotificationBarComponent,
         DialogConfirmationComponent,
         InputTextComponent,
@@ -38,7 +36,6 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
         ProgressBarComponent
     ],
     exports: [
-        LoadingScreenComponent,
         NotificationBarComponent,
         DialogConfirmationComponent,
         InputTextComponent,
