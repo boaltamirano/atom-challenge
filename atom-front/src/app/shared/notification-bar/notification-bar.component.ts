@@ -29,7 +29,4 @@ export class NotificationBarComponent {
     this.data.snackBar.dismiss();
   }
 
-  public onDismiss() {
-    this.data.snackBar.dismiss();
-  }
 }

@@ -1,12 +1,6 @@
 <div class="mat-snackbar p-3 d-flex justify-content-between "
     [ngClass]="{'color-success': data.type == 0, 'color-warning': data.type == 1, 'color-info': data.type == 2, 'color-danger': data.type == 3 }">
     <div class="d-flex justify-content-start" style="gap: 10px;">
-        <div class="mat-snackbar-message me-2">
-            <span [ngClass]="{'svg-icon-white': [0,2,3].includes(data.type), 'svg-icon-danger': data.type == 1}"
-                class="svg-icon">
-                <svg-icon src="/assets/icons/svg/person.svg"></svg-icon>
-            </span>
-        </div>
         <span class="ps-2 align-self-center"> {{data.message}}</span>
     </div>
 
@@ -14,7 +8,7 @@
         <button class="btn-icon-svg" (click)="onDismissWithAction()">
             <span [ngClass]="{'svg-icon-white': data.type == 0 ||data.type == 3 , 'svg-icon-danger': data.type == 1}"
                 class="svg-icon">
-                <svg-icon src="/assets/icons/svg/close.svg"></svg-icon>
+                x
             </span>
         </button>
     </div>

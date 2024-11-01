@@ -6,35 +6,9 @@
 
     }
 
-    .mat-mdc-snack-bar-container .mdc-snackbar__surface {
-        max-width: 440px;
-        box-shadow: none !important;
-
-    }
-
-    .mat-mdc-snack-bar-label {
-        border-radius: 10px !important;
-    }
-
-    .mdc-snackbar__label,
-    .mdc-snackbar__surface {
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-        padding-top: 0px !important;
-        padding-bottom: 0px !important;
-    }
-
-    .mat-mdc-snack-bar-container,
-    .mdc-snackbar__surface {
-        background-color: transparent !important;
-        border-radius: 10px;
-    }
-
     .mat-snackbar {
         font-size: $font-size-3;
         font-weight: 400;
-
-
     }
 
     .mat-snackbar-close {
@@ -57,42 +31,6 @@
 
     .color-info {
         background-color: $color-blue;
-    }
-
-    .btn-icon-svg {
-        .svg-icon-danger {
-            svg {
-                [fill]:not(.permanent):not(g) {
-                    fill: $black !important;
-                }
-
-                width: 14px !important;
-                height: 17px !important;
-            }
-        }
-    }
-
-    .svg-icon-danger {
-        svg {
-            [fill]:not(.permanent):not(g) {
-                fill: $black !important;
-            }
-
-            width: 14px !important;
-            height: 17px !important;
-        }
-    }
-
-    .svg-icon-white {
-        svg {
-            [fill]:not(.permanent):not(g) {
-                fill: $gray-100 !important;
-
-            }
-
-            width: 20px !important;
-            height: 20px !important;
-        }
     }
 
 }

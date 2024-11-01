@@ -16,13 +16,11 @@ export class LoadingScreenComponent implements OnInit {
   show: boolean = false;
 
   constructor(
-    private el: ElementRef,
     private store: Store<AppState>,
     @Inject(DOCUMENT) private document: Document
   ) { }
 
   ngOnInit(): void {
-
     this.store.pipe(select(selectLayoutLoading)).subscribe(res => {
       this.show = res
       if (this.show) {

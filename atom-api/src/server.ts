@@ -8,8 +8,8 @@ import swaggerSpecs from './shared/config/docs/swaggerConfiguration';
 
 const app = express()
 app.use(cors({
-    origin: ['http://localhost:4200', 'https://tu-dominio.com'], // Cambia a los dominios permitidos
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
+    origin: ['http://localhost:4200', 'https://omar-react-4bdd7.web.app'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 app.use(bodyParse.json())
 

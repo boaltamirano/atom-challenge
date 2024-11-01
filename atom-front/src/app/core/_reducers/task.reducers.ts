@@ -25,7 +25,6 @@ export function taskReducer(state = initialTaskState, action: TaskActions): Task
             const tasksCompleted: TaskModel[] = tasks.filter(task => task.statusComplete === false);
             const tasksPending: TaskModel[] = tasks.filter(task => task.statusComplete === true);
 
-            console.log(tasks)
             return {
                 ...state,
                 taskList: tasks,

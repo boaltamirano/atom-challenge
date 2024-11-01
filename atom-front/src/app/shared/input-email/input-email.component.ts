@@ -14,12 +14,6 @@ export class InputEmailComponent {
   @Input() inputClass: string = '';
   @Input() labelClass: string = 'p-grey d-block';
 
-
-  isControlValid(): boolean {
-    const control = this.control;
-    return control.valid && (control.dirty || control.touched);
-  }
-
   isControlInvalid(): boolean {
     const control = this.control;
     return control.invalid && (control.dirty || control.touched);
@@ -30,8 +24,4 @@ export class InputEmailComponent {
     return control.hasError(validation) && (control.dirty || control.touched);
   }
 
-  isControlTouched(): boolean {
-    const control = this.control;
-    return control.dirty || control.touched;
-  }
 }

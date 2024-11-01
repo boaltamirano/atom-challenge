@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'atom-progress-bar',
@@ -6,5 +6,4 @@ import { Component, Input } from '@angular/core';
   styleUrl: './progress-bar.component.scss'
 })
 export class ProgressBarComponent {
-  @Input() value: boolean = false
 }

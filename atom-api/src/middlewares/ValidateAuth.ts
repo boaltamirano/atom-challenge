@@ -7,13 +7,8 @@ import config from '../shared/config/env'
 export const verificarToken = (req: Request, res: Response, next: NextFunction) => {
     try {
         const authHeader = req.headers.authorization;
-        // const verification = req.headers['x-token']
-        // console.log(verification)
         const token = authHeader ? authHeader.split(' ').pop() || '' : '';
         if (token) {
-            // const tokena = jwt.sign({ email: "test@gmail.com"  }, config.SECRET_TOKEN, { algorithm: 'HS256', expiresIn: '10d' });
-            // console.log(tokena)
-
             jwt.verify(token, config.SECRET_TOKEN, { algorithms: ['HS256'] }, (e, decoded: JwtPayload | string | undefined) => {
                 if (e) {
                     return res.status(401).json({ message: "Invalid Token" });

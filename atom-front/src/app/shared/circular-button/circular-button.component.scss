@@ -22,22 +22,21 @@
             }
 
             .custom-icon {
-                font-size: 24px; // Tamaño más pequeño del ícono
-                color: $secondary; // Color inicial del ícono
-                transition: color 0.3s; // Suaviza el cambio de color
+                font-size: 24px;
+                color: $secondary;
+                transition: color 0.3s;
             }
 
             &:hover {
-                background-color: darken(#1976d2, 10%); // Color de fondo al pasar el cursor
-                box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); // Sombra al hacer hover
+                background-color: darken(#1976d2, 10%);
+                box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
 
                 .custom-icon {
-                    color: $third; // Cambia el color del ícono al pasar el cursor
+                    color: $third;
                 }
             }
         }
 
-        // Tamaños específicos para el botón
         &.size-md .btn-icon-round-svg {
             width: 48px;
             height: 48px;

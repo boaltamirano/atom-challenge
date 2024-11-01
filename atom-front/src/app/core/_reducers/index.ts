@@ -1,4 +1,3 @@
-// NGRX
 import {  Action, ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { routerReducer, RouterReducerState } from '@ngrx/router-store';
 import { environment } from 'src/environments/environment'
