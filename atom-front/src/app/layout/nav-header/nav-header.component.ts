@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { UserModel } from 'src/app/core/_models/user.model';
 import { AppState } from 'src/app/core/_reducers';
 import { currentUser } from 'src/app/core/_reducers/_selectors/user.selector';
+import { Logout } from 'src/app/modules/auth/_reducers/_actions/auth.actions';
 import { AuthService } from 'src/app/modules/auth/_services/auth.services';
 
 @Component({
@@ -34,6 +35,7 @@ export class NavHeaderComponent {
 
   logout() {
     this._authService.logout().subscribe()
+    this.store.dispatch(new Logout());
     this.router.navigate(['/auth/login'])
   }
 }

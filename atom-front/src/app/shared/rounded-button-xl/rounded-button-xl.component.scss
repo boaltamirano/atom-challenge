@@ -1,6 +1,8 @@
+@import "../../../assets/scss/utils/variables";
+
 :host {
     .grad {
-        background-image: linear-gradient(to right, #FF0079, #8700D0);
+        background-image: linear-gradient(to right, $primary, $secondary, $third);
         color: white;
     }
 }

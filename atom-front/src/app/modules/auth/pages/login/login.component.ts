@@ -82,7 +82,12 @@ export class LoginComponent implements OnInit {
   showErrors() {
     const errors = this.form.controls['username'].errors;
     if (errors?.['required']) {
-      alert("El campo 'username' es obligatorio.");
+      alert("El campo 'email' es obligatorio.");
     }
   }
+
+  register() {
+    this.router.navigate(['/auth/register'])
+  }
+
 }

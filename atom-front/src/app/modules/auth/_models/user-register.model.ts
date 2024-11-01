@@ -1,9 +1,14 @@
 import { UserModel } from "src/app/core/_models/user.model";
 
-export class UserRegisterModel extends UserModel {
+export class UserRegisterModel {
+    email: string;
+    name: string;
+    lastname: string;
 
     constructor(obj: any = null) {
-        super()
+        this.email = obj?.email
+        this.name = obj?.name
+        this.lastname = obj?.lastname
     }
 
 }

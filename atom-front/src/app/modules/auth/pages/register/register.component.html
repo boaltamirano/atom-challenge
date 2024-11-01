@@ -1,22 +1,33 @@
-<div class="login-page">
-    <section class="login-section">
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
-            <div class="mb-1">
-                <atom-input-text [placeholder]="'Nombre'" [control]="form.get('name')"></atom-input-text>
-            </div>
-            <div class="mb-1">
-                <atom-input-text [placeholder]="'Apellido'" [control]="form.get('last_name')"></atom-input-text>
-            </div>
-            <div class="mb-1">
-                <atom-input-email [control]="form.get('email')"></atom-input-email>
+<div class="container-wrap h-100">
+    <div class="container-login d-flex align-items-center justify-content-center px-4 pt-4 pb-1">
+        <div class="w-100">
+            <div class="text-center mb-4">
+                <span class="title">Atom Challenge</span>
+                <span class="p-grey d-block">Registro</span>
             </div>
 
-            <div class="text-center">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group mb-3">
+                    <atom-input-text [placeholder]="'Nombre'" [control]="form.get('name')"></atom-input-text>
+                </div>
 
-                <button type="submit" class="btn-solid rounded-pill fw-600 w-100 mt-3">
-                    Registrarme
-                </button>
+                <div class="form-group mb-3">
+                    <atom-input-text [placeholder]="'Apellido'" [control]="form.get('lastname')"></atom-input-text>
+                </div>
+
+                <div class="form-group ">
+                    <atom-input-email [control]="form.get('email')"></atom-input-email>
+                </div>
+
+                <div class="mb-3">
+                    <atom-rounded-button-xl [title]="'Registrar'" [color]="'grad'"></atom-rounded-button-xl>
+                </div>
+            </form>
+
+
+            <div class="register-option" (click)="register()">
+                <span class="d-block" >Acceder</span>
             </div>
-        </form>
-    </section>
+        </div>
+    </div>
 </div>

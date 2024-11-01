@@ -3,13 +3,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-import { Subscription } from 'rxjs';
+import { catchError, map, of, Subscription } from 'rxjs';
 import { AppState } from 'src/app/core/_reducers';
 
 import { currentUser } from 'src/app/core/_reducers/_selectors/user.selector';
-import { Register } from '../../_reducers/_actions/auth.actions';
+import { Login, Register } from '../../_reducers/_actions/auth.actions';
 import { UserRegisterModel } from '../../_models/user-register.model';
 import { selectLayoutLoading } from 'src/app/layout/_reducers/_selector/layout.selector';
+import { AuthService } from '../../_services/auth.services';
+import { AuthModel } from '../../_models/auth.model';
+import { LayoutUtilsServices, MessageType } from 'src/app/core/_services/layout-utils.services';
 
 
 @Component({
@@ -27,7 +30,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
   constructor(
     private fb: FormBuilder,
     private store: Store<AppState>,
-    private router: Router
+    private router: Router,
+    private _authService: AuthService,
+    private _layoutUtilsServices: LayoutUtilsServices,
   ) { }
 
   ngOnInit(): void {
@@ -63,28 +68,44 @@ export class RegisterComponent implements OnInit, OnDestroy {
     return form.controls[key] as FormGroup;
   }
 
-  validation(validation: string, controlName: string): boolean {
-    const control = this.form.controls[controlName];
-    return control.hasError(validation) && (control.dirty || control.touched)
-  }
-
-  onVisibleChange(eventValue: boolean) {
-    this.visible = eventValue;
-  }
-
   onSubmit() {
     if (this.loading) {
       return
     }
-
     if (this.form.invalid) {
+      this.showErrors();
       this.form.markAllAsTouched()
       return
     }
-    const data: UserRegisterModel = this.prepareData()
-    this.store.dispatch(new Register({ user: data }))
+
+    const userRegister: UserRegisterModel = {
+      name: this.form.get('name')?.value,
+      lastname: this.form.get('lastname')?.value,
+      email: this.form.get('email')?.value
+    }
+
+    this._authService.register(userRegister).pipe(
+      map((user: AuthModel) => {
+        if (user?.token) {
+          this.store.dispatch(new Login({ authToken: user?.token, user: user?.user }));
+          this.router.navigate(['/task'])
+        }
+        return user
+      }), catchError((error: any) => {
+        this._layoutUtilsServices.showNotification('Ha ocurrido un error', MessageType.Danger, 5000)
+        return of()
+      })).subscribe()
+
+    this.router.navigate(['/task'])
+
   }
 
+  showErrors() {
+    const errors = this.form.controls['username'].errors;
+    if (errors?.['required']) {
+      alert("El campo 'email' es obligatorio.");
+    }
+  }
 
   prepareData(): UserRegisterModel {
     const controls = this.form.controls;
@@ -93,5 +114,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
     data.name = controls['name'].value
     data.lastname = controls['lastname'].value
     return data
+  }
+
+  register() {
+    this.router.navigate(['/auth/login'])
   }
 }

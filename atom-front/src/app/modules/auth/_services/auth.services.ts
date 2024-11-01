@@ -34,10 +34,20 @@ export class AuthService {
     }
 
     register(user: UserRegisterModel): Observable<AuthModel> {
-        return this.httpx.post(
-            'user_register', user
-        ).pipe(
-            map((res: AuthModel) => new AuthModel(res)));
+        return this.httpx.post('register', user).pipe(
+            map((res: AuthModel) => {
+                return {
+                    token: res?.token,
+                    user: {
+                        id: res.user?.id,
+                        email: res.user?.email,
+                        name: res.user?.name,
+                        lastname: res.user?.lastname,
+                        createdAt: res.user?.createdAt,
+                        updatedAt: res.user?.updatedAt
+                    }
+                }
+            }));
     }
 
     logout(): Observable<any> {

@@ -1,7 +1,7 @@
 <div class="container-wrap h-100">
     <div class="container-login d-flex align-items-center justify-content-center px-4 pt-4 pb-1">
-        <div class="w-100" style="max-width: 524px;">
-            <div class="text-center mb-2 ">
+        <div class="w-100">
+            <div class="text-center mb-4">
                 <span class="title">Atom Challenge</span>
                 <span class="p-grey d-block ">Login</span>
             </div>
@@ -9,13 +9,17 @@
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
                 <div class="form-group ">
-                    <atom-input-email [control]="form.get('username')"></atom-input-email>
+                    <atom-input-email labelClass="p-grey d-block" [control]="form.get('username')"></atom-input-email>
                 </div>
 
                 <div class="mb-3">
                     <atom-rounded-button-xl [title]="'Ingresa'" [color]="'grad'"></atom-rounded-button-xl>
                 </div>
             </form>
+
+            <div class="register-option" (click)="register()">
+                <span class="d-block" >Registrar</span>
+            </div>
         </div>
     </div>
 </div>

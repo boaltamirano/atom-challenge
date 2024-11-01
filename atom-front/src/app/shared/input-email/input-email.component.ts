@@ -12,7 +12,7 @@ export class InputEmailComponent {
   @Input() placeholder: string = 'Correo electrónico';
   @Input() required: boolean = true
   @Input() inputClass: string = '';
-  @Input() labelClass: string = 'p-grey d-block';
+  @Input() labelClass: string = 'p-grey d-none';
 
   isControlInvalid(): boolean {
     const control = this.control;
