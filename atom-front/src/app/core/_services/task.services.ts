@@ -38,7 +38,7 @@ export class TaskService {
     }
 
     deleteUserTask(taskId: string): Observable<TaskModel> {
-        return this.httpx.put('delete_task', {}, {taskId});
+        return this.httpx.delete('delete_task', {}, {taskId});
     }
 
 }
