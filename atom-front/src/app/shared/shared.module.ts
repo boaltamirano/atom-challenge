@@ -1,8 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 /* Modules */
 import { NotificationBarComponent } from './notification-bar/notification-bar.component';
 import { DialogConfirmationComponent } from './dialog-confirmation/dialog-confirmation.component';
@@ -16,7 +14,6 @@ import { CoreModule } from '../core/core.module';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BtnActionComponent } from './btn-action/btn-action.component';
 import { ToolbarFilterComponent } from './toolbar-filter/toolbar-filter.component';
 import { CardListTaskComponent } from './card-list-task/card-list-task.component';
@@ -59,12 +56,9 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
         CoreModule,
         CommonModule,
         RouterModule,
-        MatIconModule,
-        MatButtonModule,
         MatDialogModule,
         MatExpansionModule,
         CdkAccordionModule,
-        MatSnackBarModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

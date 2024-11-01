@@ -1,6 +1,5 @@
 import { createSelector } from '@ngrx/store';
 import { TaskState } from '../task.reducers';
-import { TaskModel } from '../../_models/task.model';
 
 export const selectTaskState = (state: any) => state.task;
 

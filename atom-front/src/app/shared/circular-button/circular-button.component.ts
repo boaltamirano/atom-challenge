@@ -1,4 +1,3 @@
-import { Overlay } from '@angular/cdk/overlay';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({

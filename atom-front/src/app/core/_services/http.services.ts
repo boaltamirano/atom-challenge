@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UrlService } from './url.services';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Map } from '../_models/abstract-map.model';
 import { of } from 'rxjs';

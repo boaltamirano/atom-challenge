@@ -15,7 +15,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -46,7 +45,6 @@ import { NgxPermissionsModule } from 'ngx-permissions';
         MatIconModule,
         MatButtonModule,
         MatCheckboxModule,
-        MatSnackBarModule,
         MatRadioModule,
         MatDividerModule,
         MatDialogModule,
@@ -77,7 +75,6 @@ import { NgxPermissionsModule } from 'ngx-permissions';
         MatDividerModule,
         MatCheckboxModule,
         MatSelectModule,
-        MatSnackBarModule,
         MatTableModule,
         MatSortModule,
         MatProgressBarModule,

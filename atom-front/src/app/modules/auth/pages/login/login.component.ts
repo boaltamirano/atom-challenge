@@ -9,7 +9,6 @@ import { ScreenLoading } from 'src/app/layout/_reducers/_actions/layout.actions'
 import { Login } from '../../_reducers/_actions/auth.actions';
 import { AuthService } from '../../_services/auth.services';
 import { LayoutUtilsServices, MessageType } from 'src/app/core/_services/layout-utils.services';
-import { TaskService } from 'src/app/core/_services/task.services';
 
 @Component({
   selector: 'app-login',
@@ -68,7 +67,7 @@ export class LoginComponent implements OnInit {
       map(user => {
         if (user?.token) {
           this.store.dispatch(new Login({ authToken: user?.token, user: user?.user }));
-          this.router.navigate(['/stores'])
+          this.router.navigate(['/task'])
         }
         return user
       }), catchError((error: any) => {

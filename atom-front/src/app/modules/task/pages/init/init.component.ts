@@ -4,12 +4,12 @@ import { select, Store } from '@ngrx/store';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { AppState } from 'src/app/core/_reducers';
-import { ScreenLoading } from 'src/app/layout/_reducers/_actions/layout.actions';
 import { TaskModel } from 'src/app/core/_models/task.model';
 import { TaskCreateDialogComponent } from '../../components/task-create-dialog/task-create-dialog.component';
 import { currentIsLoad, currentTaskCompleted, currentTaskPending } from 'src/app/core/_reducers/_selectors/task.selector';
 import { LayoutUtilsServices } from 'src/app/core/_services/layout-utils.services';
-import { TaskDeleteRequested } from 'src/app/core/_reducers/_actions/task.actions';
+import { LoadingTask, TaskDeleteRequested, TaskRequested } from 'src/app/core/_reducers/_actions/task.actions';
+import { UserLoaded } from 'src/app/core/_reducers/_actions/user.actions';
 
 @Component({
   selector: 'app-init',
@@ -35,6 +35,10 @@ export class InitComponent implements OnInit {
 
 
   ngOnInit(): void {
+    const userData = JSON.parse(localStorage.getItem("user") ?? "");
+    this.store.dispatch(new UserLoaded({ user: userData }));
+    this.store.dispatch(new LoadingTask({ isLoading: true}));
+    this.store.dispatch(new TaskRequested());
 
     this.subscriptions.push(this.store.pipe(select(currentTaskCompleted)).subscribe(res => {
       this.completedTask = res
@@ -63,16 +67,7 @@ export class InitComponent implements OnInit {
     });
   }
 
-  showErrors() {
-    const errors = this.form.controls['username'].errors;
-    if (errors?.['required']) {
-      alert("El campo 'username' es obligatorio.");
-    }
-  }
-
   editItem(task: TaskModel) {
-    console.log(task)
-
     this.dialog.open(TaskCreateDialogComponent, {
       width: '580px',
       data: task
