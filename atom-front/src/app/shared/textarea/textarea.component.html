@@ -1,0 +1,26 @@
+<div class="form-group form-group-solid">
+    <label class="mb-0 {{labelClass}}">
+        {{label}}
+    </label>
+
+    <label class="mb-0 d-block light-label" *ngIf="subLabel">
+        {{subLabel}}
+    </label>
+
+    <div class="mb-1"></div>
+
+    <div class="position-relative">
+        <mat-hint align="end" *ngIf="maxlength">{{control.value?.length||0}}/{{maxlength}}</mat-hint>
+        <textarea class="form-control p-2" [formControl]="control" [placeholder]="placeholder" matInput
+            [maxlength]="maxlength" [minLength]="minlength">
+    </textarea>
+    </div>
+
+    <div class="animated fadeInUp d-none" [class.d-block]="controlHasError('required')">
+        Esta información es requerida
+    </div>
+
+    <div class="animated fadeInUp d-none" [class.d-block]="controlHasError('minlength')">
+        Mínimo {{minlength}} caracteres
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="card mb-2">
+    <div class="card-body">
+        <div class="d-flex flex-column w-100">
+            <div class="d-flex justify-content-between mb-2 align-items-start" style="gap: 10px;">
+                <h6 class="card-title fw-600 flex-grow-1 pt-2" style="flex: 1">{{data.title}}</h6>
+                <div style="gap: 5px;" class="d-flex">
+                    <atom-circular-button [icon]="'edit'" [size]="'sm'" (onClick)="handleEdit()"
+                        [title]="'Editar'"></atom-circular-button>
+                    <atom-circular-button [icon]="'delete'" (onClick)="handleDetele()" [size]="'sm'"
+                        [title]="'Eliminar'"></atom-circular-button>
+                </div>
+            </div>
+            <span class="card-text">{{data.description}}</span>
+        </div>
+    </div>
+
+</div>

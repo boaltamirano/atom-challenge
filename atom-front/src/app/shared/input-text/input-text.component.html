@@ -1,0 +1,25 @@
+<div class="form-group form-group-solid">
+    <label class="mb-0 {{labelClass}}" *ngIf="label">
+        {{label}}
+    </label>
+
+    <label class="mb-0 d-block light-label" *ngIf="subLabel">
+        {{subLabel}}
+    </label>
+
+    <div class="input-group input-group-md mb-1" [class.input-danger]="isControlInvalid()">
+        <input [formControl]="control" class="form-control" [placeholder]="placeholder" [maxlength]="maxlength"
+            [minLength]="minlength" (keyup)="keyupEvent.emit($event)">
+    </div>
+
+    <div class="invalid-feedback animated fadeInUp d-none" [class.d-block]="controlHasError('required')">
+        Esta información es requerida
+    </div>
+
+    <div class="invalid-feedback animated fadeInUp d-none" [class.d-block]="controlHasError('minlength')">
+        Mínimo {{minlength}} caracteres
+    </div>
+
+    <span class="input-text-information" *ngIf="labelBottom" [innerHTML]="labelBottom">
+    </span>
+</div>

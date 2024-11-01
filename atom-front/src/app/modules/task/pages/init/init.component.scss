@@ -1,0 +1,28 @@
+@import "../../../../../assets/scss/utils/variables";
+
+.tasks-container {
+    max-height: calc(100vh - 250px);
+    // max-height: 100px;
+    overflow-y: auto;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $secondary;
+        border-radius: 10px;
+
+        &:hover {
+            background: $primary;
+        }
+    }
+}

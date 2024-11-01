@@ -1,0 +1,37 @@
+<div class="mb-1 position-relative">
+    <h2 class="text-black font-w900 border-bottom pb-2">Tus tareas</h2>
+    <atom-progress-bar style="top: 36px; z-index: 110;" class="w-100 position-absolute"
+        *ngIf="isLoading"></atom-progress-bar>
+</div>
+<atom-toolbar-filter (eventAddClick)="handleOpenCreateModal()"></atom-toolbar-filter>
+<div class="container-fluid p-0">
+    <div class="row">
+        <div class="col-xl-6 col-xxl-6 col-lg-6 ">
+            <div class="mb-3 position-relative mt-3">
+                <p class="text-black border-bottom pb-2">Tareas pendientes ({{pendingTotalTask}})</p>
+                <atom-progress-bar style="top: 36px; z-index: 110;" class="w-100 position-absolute"
+                    *ngIf="isLoading"></atom-progress-bar>
+            </div>
+            <div class="tasks-container">
+                <div class="mb-2 col" *ngFor="let task of pendingTask; trackBy: trackByParentId">
+                    <atom-card-list-task [data]="task" (eventDeleteClick)="deleteItem($event)" (eventEditClick)="editItem($event)">
+                    </atom-card-list-task>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-xxl-6 col-lg-6 ">
+            <div class="mb-3 position-relative mt-3">
+                <p class="text-black border-bottom pb-2">Tareas finalizadas ({{completedTotalTask}})</p>
+                <atom-progress-bar style="top: 36px; z-index: 110;" class="w-100 position-absolute"
+                    *ngIf="isLoading"></atom-progress-bar>
+            </div>
+            <div class="tasks-container">
+                <div class="mb-2 col" *ngFor="let task of completedTask; trackBy: trackByParentId">
+                    <atom-card-list-task [data]="task" (eventDeleteClick)="deleteItem($event)">
+                    </atom-card-list-task>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

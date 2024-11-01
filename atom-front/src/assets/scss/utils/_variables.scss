@@ -1,0 +1,111 @@
+$color-gray: #969BA0;
+$content-light: #cacaca;
+
+$title-color: #082A41;
+$content-color: #777777;
+$content-color-gray: #969BA0 ;
+
+:root {
+  --mdc-checkbox-state-layer-size: 20px;
+  --mdc-radio-state-layer-size: 20px;
+  --mdc-list-list-item-one-line-container-height: 40px;
+}
+.mat-mdc-list-base {
+  --mdc-list-list-item-one-line-container-height: 40px;
+}
+
+$primary: var(--primary, #ff8f2d);
+$secondary: var(--secondary, #FFB77F);
+$third: var(--third, #FF6800);
+$color-gray: var(--gray, #82909B);
+$black: var(--black, #082A41); ;
+$white: #ffffff;
+$white-light: #f7f7f7;
+$theme-color: var(--primary, #93226e);
+$theme-color-rgb: rgb(0, 136, 56);
+$theme-light-color: #edf8f8;
+$grey-light: #fafafa;
+$rating: #ffbf13;
+$theme-primary: #effefc;
+$theme-yellow: #fff9d8;
+$theme-light-yellow: #fff8ed;
+$theme-orange: #fff2ec;
+$theme-orange-light: #fff6f3;
+$theme-pink: #fff2f2;
+$theme-purple: #fdf7ff;
+$theme-danger: #e93939;
+$color-success: #59BC47;
+$color-danger: #F03D3E;
+$color-warning: #FFB518;
+$color-blue:    #2F80ED;
+$color-purple: #7715C1;
+
+// scss-docs-start gray-color-variables
+$gray-100: #f7f7f7 !default;
+$gray-200: #E9EBED !default;
+$gray-300: #D4D4D4 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #969BA0 !default;
+$gray-700: #3E4954 !default;
+$gray-800: #343a40 !default;
+$gray-900: #082A41 !default;
+$gray-20:  #E0E2E5 !default;
+$black:    #082A41 !default;
+$gray:     #7C7C7C !default;
+
+/// Font Familly ///
+$font-1: 'Inter', sans-serif;
+$font-2: 'Inter', sans-serif;
+
+/// Border color ///
+$border-color1: #f1f1f1;
+$border-color2: #ceefeb;
+
+/// Border ///
+$border1: 1px solid $border-color1;
+$border2: 1px solid $border-color2;
+
+///Box Shadow Color ///
+$box-shadow-color1: rgba(62, 63, 122, 0.04);
+$box-shadow-color2: #f7f7f7;
+$box-shadow-color3: rgba(255, 87, 34, 0.5);
+
+/// Main box shadow ///
+$box-shadow1: 3px 12px 23px 3px $box-shadow-color1;
+$box-shadow2: 0px 4px 11px 2px $box-shadow-color2;
+$box-shadow-inputs: 0 0 0 1px $box-shadow-color2;
+
+/// Skeleton loader ///
+$sk-bg: #f3f3f3;
+$sk-bg-dark: #e8e8e8;
+$sk-an-bg-grey: linear-gradient(90deg, $sk-bg-dark 8%, #e4e4e4 18%, $sk-bg-dark 33%);
+$sk-animate: skeletonAnimation 4s linear infinite forwards;
+
+/// Dark ///
+$title-dark-color: #082A41;
+$white-text-dark: #f0f0f0;
+$content-dark-color: #777777;
+
+/// Customer ///
+$padding-element-default: 10px 16px;
+
+/// Border-Radius ///
+$border-radius-default: 30px;
+
+/// font size ///
+
+$font-size-1 : calc(12px + 2*(100vw - 320px) / 1600) !important;
+$font-size-2 : calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320))) !important;
+$font-size-2-5 : calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))) !important;
+$font-size-3 : calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
+$font-size-4 : calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320))) !important;
+$font-size-5 : calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320))) !important;
+$font-size-6 : calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) !important;
+$font-size-7 : calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320))) !important;
+
+$size-element-sm: calc(33.25px + (36 - 34) * ((100vw - 320px) / (1920 - 320))) !important;
+$size-element-md: calc(60.25px + (36 - 34) * ((100vw - 320px) / (1920 - 320))) !important;
+$size-element-lg: calc(90px + (92 - 90) * ((100vw - 320px) / (1920 - 320))) !important;
+$size-banner-sm: calc(120px + (36 - 34) * ((100vw - 320px) / (1920 - 320))) !important;
+$size-banner-md: calc(190px + (36 - 34) * ((100vw - 320px) / (1920 - 320))) !important;

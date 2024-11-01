@@ -1,0 +1,8 @@
+.env
+node_modules
+src/shared/config/firestore-key.json
+src/shared/config/keys/*
+functions
+firebase.json
+.firebaserc
+ui-debug.log

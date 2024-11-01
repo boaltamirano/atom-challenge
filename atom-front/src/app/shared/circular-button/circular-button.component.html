@@ -1,0 +1,7 @@
+<div class="container-btn">
+  <button class="btn-icon-round-svg bg-{{color}} border-0 {{size}}" [class.size-m]="size == 'md'"
+    [class.size-s]="size == 'sm'" matRipple matRippleColor="rgba(0,0,0,0.3)" (click)="handleClick()"
+    [matTooltip]="title||''">
+    <mat-icon class="custom-icon">{{icon}}</mat-icon>
+  </button>
+</div>

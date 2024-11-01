@@ -1,0 +1,22 @@
+.toolbar {
+  background-color: white;
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .name-nav {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .icon-nav {
+    width: 40px;
+  }
+
+  .hide-on-mobile {
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+}

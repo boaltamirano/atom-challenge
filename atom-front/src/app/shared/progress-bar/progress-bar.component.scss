@@ -1,0 +1,8 @@
+@import "../../../assets/scss/utils/variables";
+
+:host {
+    .custom-progress-bar {
+      --mdc-linear-progress-active-indicator-color: #FFB77F;
+      --mdc-linear-progress-track-color: #ffeeee;
+    }
+  }

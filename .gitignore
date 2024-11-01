@@ -1,0 +1,3 @@
+atom-api/.env
+atom-api/node_modules
+atom-api/src/shared/config/firestore-key.json

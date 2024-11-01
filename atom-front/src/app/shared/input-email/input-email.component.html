@@ -1,0 +1,17 @@
+<div class="form-group form-group-solid">
+    <label class="mb-2 {{labelClass}}">
+        {{label}}
+    </label>
+
+    <div class="input-group mb-1 {{inputClass}}" [class.input-danger]="isControlInvalid()">
+        <input type="email" [formControl]="control" class="form-control" [placeholder]="placeholder">
+    </div>
+
+    <div class="invalid-feedback animated fadeInUp d-none" [class.d-block]="controlHasError('required')">
+        Esta información es requerida
+    </div>
+
+    <div class="invalid-feedback animated fadeInUp d-none" [class.d-block]="controlHasError('email')">
+        Por favor, ingrese un formato adecuado Correo electrónico
+    </div>
+</div>

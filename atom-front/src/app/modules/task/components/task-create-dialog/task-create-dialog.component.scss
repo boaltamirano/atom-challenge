@@ -1,0 +1,52 @@
+@import "../../../../../assets/scss/utils/variables";
+
+:host {
+    .modal-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #EEEEEE;
+        border-top-left-radius: calc(0.3rem - 1px);
+        border-top-right-radius: calc(0.3rem - 1px);
+
+        .close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: $gray-200;
+            border-radius: $border-radius-default;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+
+            span {
+                color: $primary;
+                font-size: larger;
+            }
+
+            &:hover {
+                background-color: $third;
+                border-radius: 20px;
+
+                span {
+                    color: $white;
+                }
+
+            }
+
+        }
+
+    }
+
+    .site-create-modal-text {
+        color: #969BA0;
+        margin-top: 1px;
+        margin-left: 5px;
+        font-size: 14px;
+        font-weight: 400;
+
+    }
+}

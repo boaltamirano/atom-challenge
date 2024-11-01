@@ -1,0 +1,27 @@
+@import "../../../assets/scss/utils/variables";
+
+:host {
+    .form-group-solid {
+        label {
+            font-weight: 300;
+            color: #7e7e7e;
+            font-size: $font-size-1;
+        }
+
+        .form-control {
+            color: $black;
+            background-color: #F9F9F9;
+            border-radius: 0.45rem !important;
+        }
+
+        .input-group {
+            input:focus {
+                outline: none;
+                border-color: $secondary;
+                box-shadow: $box-shadow-inputs;
+            }
+        }
+
+    }
+
+}

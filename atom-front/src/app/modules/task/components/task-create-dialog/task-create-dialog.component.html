@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <h4 class="mb-0 font-w700 mt-2">Registrar una nueva tarea</h4>
+    <button type="button" class="close" [mat-dialog-close]="true"><span>&times;</span>
+    </button>
+</div>
+<div mat-dialog-content class="p-4">
+    <p class="site-create-modal-text">Aquí podrás agregar una nueva tarea, indícanos la información básica y luego
+        podrás editar cualquier información que necesites de todas tus tareas registradas.</p>
+    <div class="p-0">
+        <div class="row mb-2">
+            <div class="col-md-12">
+                <atom-input-text label="Título" placeholder="Nombre" [maxlength]="50" [minlength]="3"
+                    [control]="form.get('title')" labelClass="light-label"></atom-input-text>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <atom-textarea label="Descripción" placeholder="Descripción" [maxlength]="250" [minlength]="3"
+                    [control]="form.get('description')" labelClass="light-label"></atom-textarea>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <atom-input-slide-toggle placeholder="Tarea finalizada"
+                    [control]="form.get('statusComplete')"></atom-input-slide-toggle>
+            </div>
+        </div>
+    </div>
+
+    <div mat-dialog-actions class="d-flex justify-content-center mt-3">
+        <atom-btn-action title="Guardar" size="xs" class="ml-4" (onClick)="onSubmit()"></atom-btn-action>
+    </div>
+</div>

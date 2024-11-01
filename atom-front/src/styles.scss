@@ -1,0 +1,10 @@
+@import "node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+@import "./assets/css/style.css";
+@import "./assets/scss/utils/variables";
+
+html,
+body {
+    height: 100%;
+    background-color: rgba(239, 239, 239, 0.37);
+}
