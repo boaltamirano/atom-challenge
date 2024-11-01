@@ -25,11 +25,12 @@ export function taskReducer(state = initialTaskState, action: TaskActions): Task
             const tasksCompleted: TaskModel[] = tasks.filter(task => task.statusComplete === false);
             const tasksPending: TaskModel[] = tasks.filter(task => task.statusComplete === true);
 
+            console.log(tasks)
             return {
                 ...state,
                 taskList: tasks,
-                tasksCompleted: tasksCompleted,
-                tasksPending: tasksPending
+                tasksCompleted: tasksCompleted.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()),
+                tasksPending: tasksPending.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
             };
         }
 
@@ -47,21 +48,49 @@ export function taskReducer(state = initialTaskState, action: TaskActions): Task
         }
 
         case TaskActionTypes.SaveTask: {
-            let tasksCompleted: TaskModel[] = state.tasksCompleted;
-            let tasksPending: TaskModel[] = state.tasksCompleted;
 
-            if (action.payload.task.statusComplete) {
-                tasksCompleted = [action.payload.task, ...state.tasksCompleted];
-                console.log("TRUEEEEE")
-            } else {
-                console.log("FALSOOOO")
-                tasksPending = [action.payload.task, ...state.tasksPending];
-            }
+            const tasks: TaskModel[] = [action.payload.task, ...state.taskList];
+            const tasksCompleted: TaskModel[] = tasks.filter(task => task.statusComplete === false);
+            const tasksPending: TaskModel[] = tasks.filter(task => task.statusComplete === true);
+
             return {
                 ...state,
-                taskList: [action.payload.task, ...state.taskList],
-                tasksCompleted: tasksCompleted,
-                tasksPending: tasksPending
+                taskList: tasks,
+                tasksCompleted: tasksCompleted.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()),
+                tasksPending: tasksPending.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+            };
+        }
+
+        case TaskActionTypes.UpdateTask: {
+
+            const tasks = state.taskList.map(task =>
+                task.id === action.payload.taskId
+                    ? { ...task, ...action.payload.task }
+                    : task
+            )
+
+            const tasksCompleted: TaskModel[] = tasks.filter(task => task.statusComplete === false);
+            const tasksPending: TaskModel[] = tasks.filter(task => task.statusComplete === true);
+
+            return {
+                ...state,
+                taskList: tasks,
+                tasksCompleted: tasksCompleted.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()),
+                tasksPending: tasksPending.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+            };
+        }
+
+        case TaskActionTypes.DeleteTask: {
+
+            const tasks = state.taskList.filter(task => task.id !== action.payload.taskId);
+            const tasksCompleted: TaskModel[] = tasks.filter(task => task.statusComplete === false);
+            const tasksPending: TaskModel[] = tasks.filter(task => task.statusComplete === true);
+
+            return {
+                ...state,
+                taskList: tasks,
+                tasksCompleted: tasksCompleted.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()),
+                tasksPending: tasksPending.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
             };
         }
 

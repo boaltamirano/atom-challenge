@@ -29,6 +29,7 @@
     </div>
 
     <div mat-dialog-actions class="d-flex justify-content-center mt-3">
-        <atom-btn-action title="Guardar" size="xs" class="ml-4" (onClick)="onSubmit()"></atom-btn-action>
+        <atom-btn-action *ngIf="this.updateTask" title="Actualizar" size="xs" class="ml-4" (onClick)="onSubmit()"></atom-btn-action>
+        <atom-btn-action *ngIf="!this.updateTask" title="Guardar" size="xs" class="ml-4" (onClick)="onSubmit()"></atom-btn-action>
     </div>
 </div>

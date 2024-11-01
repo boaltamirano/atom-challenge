@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { HttpService } from './http.services';
 import { CreateTaskModel, TaskModel } from '../_models/task.model';
 
@@ -27,6 +27,18 @@ export class TaskService {
                 map(
                     (res: TaskModel) => new TaskModel(res)
                 ));
+    }
+
+    updateUserTask(data: CreateTaskModel, taskId: string): Observable<TaskModel> {
+        return this.httpx.put('update_task', data, {taskId})
+            .pipe(
+                map(
+                    (res: TaskModel) => new TaskModel(res)
+                ));
+    }
+
+    deleteUserTask(taskId: string): Observable<TaskModel> {
+        return this.httpx.put('delete_task', {}, {taskId});
     }
 
 }

@@ -28,7 +28,7 @@
             </div>
             <div class="tasks-container">
                 <div class="mb-2 col" *ngFor="let task of completedTask; trackBy: trackByParentId">
-                    <atom-card-list-task [data]="task" (eventDeleteClick)="deleteItem($event)">
+                    <atom-card-list-task [data]="task" (eventDeleteClick)="deleteItem($event)" (eventEditClick)="editItem($event)">
                     </atom-card-list-task>
                 </div>
             </div>
