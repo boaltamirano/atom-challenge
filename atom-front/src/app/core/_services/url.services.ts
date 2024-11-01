@@ -12,6 +12,8 @@ let urls: Map = {
     /** API Tasks */
     'save_task': '/api/tasks',
     'list_task': '/api/tasks',
+    'update_task': '/api/tasks/{taskId}',
+    'delete_task': '/api/tasks/{taskId}',
 }
 
 @Injectable({
